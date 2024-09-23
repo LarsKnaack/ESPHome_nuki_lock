@@ -5,7 +5,6 @@
 #include "esphome/components/binary_sensor/binary_sensor.h"
 #include "esphome/components/sensor/sensor.h"
 #include "esphome/components/text_sensor/text_sensor.h"
-#include "esphome/components/api/custom_api_device.h"
 
 #include "NukiLock.h"
 #include "NukiConstants.h"
@@ -16,7 +15,7 @@ namespace nuki_lock {
 
 static const char *TAG = "nukilock.lock";
 
-class NukiLockComponent : public lock::Lock, public PollingComponent, public api::CustomAPIDevice, public Nuki::SmartlockEventHandler {
+class NukiLockComponent : public lock::Lock, public PollingComponent, public Nuki::SmartlockEventHandler {
     static const uint8_t BLE_CONNECT_TIMEOUT_SEC = 3;
     static const uint8_t BLE_CONNECT_TIMEOUT_RETRIES = 1;
     static const uint8_t MAX_ACTION_ATTEMPTS = 5;
